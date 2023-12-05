@@ -1,0 +1,4 @@
+<launch>
+    <include file="$(find scan_detection_cnt)/launch/box_filter.launch"/>
+    <node pkg="scan_detection_cnt" type="scan_detection_cnt_node.py" name="scan_detection_cnt_node" ns="scan_detection_cnt" output="screen"/>
+</launch>
