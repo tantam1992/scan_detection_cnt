@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 import rospy
 from sensor_msgs.msg import LaserScan
 from std_msgs.msg import Int16
@@ -13,7 +13,8 @@ def callback(data):
     count = 0
     for i in range(len(data.ranges)):
         # check if value is not nan
-        if not math.isnan(data.ranges[i]):
+        if not math.isnan(data.ranges[i]) and data.ranges[i] != 0.0:
+            rospy.loginfo("valid")
             count += 1
     # rospy.loginfo("Number of obstacle detected: %d", count)
     pub.publish(count)   

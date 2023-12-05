@@ -6,7 +6,7 @@ scan_filter_chain:
     max_x: 01.5
     max_y: 0.34
     max_z: 0.3
-    min_x: 0.3
+    min_x: 1.0
     min_y: -0.34
     min_z: -0.28
     invert: true
