@@ -1,4 +1,11 @@
 <launch>
-    <include file="$(find scan_detection_cnt)/launch/box_filter.launch"/>
-    <node pkg="scan_detection_cnt" type="scan_detection_cnt_node.py" name="scan_detection_cnt_node" ns="scan_detection_cnt" output="screen"/>
+    <arg name="ns" default="scan_detection_cnt" />
+    <arg name="config" default="box_filter" />
+    <arg name="scan_topic" default="/lidarFront/scan" />
+        <include file="$(find scan_detection_cnt)/launch/box_filter.launch">
+            <arg name="ns" value="$(arg ns)" />
+            <arg name="config" value="$(arg config)" />
+            <arg name="scan_topic" value="$(arg scan_topic)" />
+        </include>
+        <node pkg="scan_detection_cnt" type="scan_detection_cnt_node.py" name="$(arg ns)_node" ns="$(arg ns)" output="screen"/>
 </launch>
