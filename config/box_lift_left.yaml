@@ -1,0 +1,7 @@
+scan_filter_chain:
+- name: polygon_filter
+  type: laser_filters/LaserScanPolygonFilter
+  params:
+    polygon_frame: map
+    polygon: [[-28.77, 0.98], [-28.56, -1.09], [-29.56, -0.97], [-29.86, 1.03]]
+    invert: true
