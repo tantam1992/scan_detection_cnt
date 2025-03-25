@@ -16,7 +16,7 @@ def callback(data):
     count = 0
     for i in range(len(data.ranges)):
         # check if value is not nan
-        if not math.isnan(data.ranges[i]) and data.ranges[i] != 0.0:
+        if not math.isnan(data.ranges[i]) and data.ranges[i] != 0.0 and data.ranges[i] != float('inf'):
             count += 1
     # rospy.loginfo("Number of obstacle detected: %d", count)
     pub.publish(count)
