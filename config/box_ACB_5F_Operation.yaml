@@ -3,5 +3,5 @@ scan_filter_chain:
   type: laser_filters/LaserScanPolygonFilter
   params:
     polygon_frame: map
-    polygon: [[-7.612, -7.771], [-7.645, -8.690], [-7.035, -8.725], [-6.947, -7.935]]
+    polygon: [[-7.612, -7.771], [-7.645, -8.690], [-6.977, -8.725], [-6.947, -7.935]]
     invert: true
