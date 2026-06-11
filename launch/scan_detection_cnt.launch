@@ -3,12 +3,14 @@
     <arg name="config" default="box_filter" />
     <arg name="scan_topic" default="/lidarFront/scan" />
     <arg name="out_topic" default="dooropened" />
+    <arg name="count_threshold" default="30" />
         <include file="$(find scan_detection_cnt)/launch/box_filter.launch">
             <arg name="ns" value="$(arg ns)" />
             <arg name="config" value="$(arg config)" />
             <arg name="scan_topic" value="$(arg scan_topic)" />
         </include>
         <node pkg="scan_detection_cnt" type="scan_detection_cnt_node.py" name="$(arg ns)_node" ns="$(arg ns)" output="screen">
+            <param name="count_threshold" value="$(arg count_threshold)" />
             <remap from="dooropened" to="$(arg out_topic)" />
         </node>
 </launch>

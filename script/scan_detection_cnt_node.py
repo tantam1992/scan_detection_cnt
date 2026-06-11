@@ -10,6 +10,9 @@ rospy.loginfo("scan detection counter started")
 pub = rospy.Publisher("detections", Int16, queue_size=10)
 pub2 = rospy.Publisher("dooropened", Bool, queue_size=1)
 
+# Get configurable threshold from launch file (default = 30)
+count_threshold = rospy.get_param('~count_threshold', 30)
+
 # Counts the number of valid range values in a LaserScan message.
 # Publishes the count as an Int16 message on the 'detections' topic.
 def callback(data):
@@ -21,7 +24,7 @@ def callback(data):
     # rospy.loginfo("Number of obstacle detected: %d", count)
     pub.publish(count)
     # if the count is more than 30, publish the door is not opened.
-    if count >= 30:
+    if count >= count_threshold:
         pub2.publish(False)
     else:
         pub2.publish(True) 
