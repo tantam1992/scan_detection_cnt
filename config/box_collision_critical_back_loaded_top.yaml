@@ -6,7 +6,7 @@ scan_filter_chain:
     max_x: -0.98197 #the x dist of top lidar and back lidar
     max_y: 0.4
     max_z: 0.1
-    min_x: -0.98197 #change it
+    min_x: -1.58197 #change it
     min_y: -0.4
     min_z: -0.1
     invert: true

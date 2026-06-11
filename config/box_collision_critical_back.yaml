@@ -3,7 +3,7 @@ scan_filter_chain:
   type: laser_filters/LaserScanBoxFilter
   params:
     box_frame: livox_frame_192_168_1_104
-    max_x: 1.5 #change it
+    max_x: 0.3 #change it
     max_y: 0.4
     max_z: 1.0
     min_x: 0.0
